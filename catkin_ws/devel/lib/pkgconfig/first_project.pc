@@ -1,8 +1,0 @@
-prefix=/home/stinky/Documents/polimi-ros-project1/catkin_ws/devel
-
-Name: first_project
-Description: Description of first_project
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
