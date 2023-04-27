@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/stinky/Documents/polimi-ros-project1/catkin_sw/build
 include first_project/CMakeFiles/first_project_generate_messages_nodejs.dir/progress.make
 
 first_project/CMakeFiles/first_project_generate_messages_nodejs: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/gennodejs/ros/first_project/msg/Odom.js
+first_project/CMakeFiles/first_project_generate_messages_nodejs: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/gennodejs/ros/first_project/srv/Reset_odom.js
 
 
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/gennodejs/ros/first_project/msg/Odom.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
@@ -61,8 +62,14 @@ first_project/CMakeFiles/first_project_generate_messages_nodejs: /home/stinky/Do
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from first_project/Odom.msg"
 	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg -Ifirst_project:/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p first_project -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/gennodejs/ros/first_project/msg
 
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/gennodejs/ros/first_project/srv/Reset_odom.js: /opt/ros/noetic/lib/gennodejs/gen_nodejs.py
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/gennodejs/ros/first_project/srv/Reset_odom.js: /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from first_project/Reset_odom.srv"
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv -Ifirst_project:/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p first_project -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/gennodejs/ros/first_project/srv
+
 first_project_generate_messages_nodejs: first_project/CMakeFiles/first_project_generate_messages_nodejs
 first_project_generate_messages_nodejs: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/gennodejs/ros/first_project/msg/Odom.js
+first_project_generate_messages_nodejs: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/gennodejs/ros/first_project/srv/Reset_odom.js
 first_project_generate_messages_nodejs: first_project/CMakeFiles/first_project_generate_messages_nodejs.dir/build.make
 
 .PHONY : first_project_generate_messages_nodejs

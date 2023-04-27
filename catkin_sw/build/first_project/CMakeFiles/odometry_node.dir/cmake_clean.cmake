@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node"
   "/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node.pdb"
+  "CMakeFiles/odometry_node.dir/src/main.cpp.o"
   "CMakeFiles/odometry_node.dir/src/odometry_node.cpp.o"
 )
 

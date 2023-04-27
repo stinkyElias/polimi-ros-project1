@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/_Odom.py"
   "/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/__init__.py"
+  "/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/_Reset_odom.py"
+  "/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/__init__.py"
   "CMakeFiles/first_project_generate_messages_py"
 )
 

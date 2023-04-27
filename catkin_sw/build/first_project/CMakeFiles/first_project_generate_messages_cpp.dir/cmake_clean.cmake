@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Odom.h"
+  "/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Reset_odom.h"
   "CMakeFiles/first_project_generate_messages_cpp"
 )
 

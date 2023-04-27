@@ -42,6 +42,10 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/first_project/srv" TYPE FILE FILES "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/first_project/cmake" TYPE FILE FILES "/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project/catkin_generated/installspace/first_project-msg-paths.cmake")
 endif()
 

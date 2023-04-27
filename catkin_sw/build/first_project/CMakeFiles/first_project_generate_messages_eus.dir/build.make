@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/stinky/Documents/polimi-ros-project1/catkin_sw/build
 include first_project/CMakeFiles/first_project_generate_messages_eus.dir/progress.make
 
 first_project/CMakeFiles/first_project_generate_messages_eus: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/msg/Odom.l
+first_project/CMakeFiles/first_project_generate_messages_eus: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/srv/Reset_odom.l
 first_project/CMakeFiles/first_project_generate_messages_eus: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/manifest.l
 
 
@@ -62,12 +63,18 @@ first_project/CMakeFiles/first_project_generate_messages_eus: /home/stinky/Docum
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from first_project/Odom.msg"
 	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg -Ifirst_project:/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p first_project -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/msg
 
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/srv/Reset_odom.l: /opt/ros/noetic/lib/geneus/gen_eus.py
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/srv/Reset_odom.l: /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from first_project/Reset_odom.srv"
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv -Ifirst_project:/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p first_project -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/srv
+
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp manifest code for first_project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp manifest code for first_project"
 	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project first_project geometry_msgs nav_msgs std_msgs rosgraph_msgs
 
 first_project_generate_messages_eus: first_project/CMakeFiles/first_project_generate_messages_eus
 first_project_generate_messages_eus: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/msg/Odom.l
+first_project_generate_messages_eus: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/srv/Reset_odom.l
 first_project_generate_messages_eus: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/share/roseus/ros/first_project/manifest.l
 first_project_generate_messages_eus: first_project/CMakeFiles/first_project_generate_messages_eus.dir/build.make
 

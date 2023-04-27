@@ -54,6 +54,7 @@ CMAKE_BINARY_DIR = /home/stinky/Documents/polimi-ros-project1/catkin_sw/build
 include first_project/CMakeFiles/first_project_generate_messages_cpp.dir/progress.make
 
 first_project/CMakeFiles/first_project_generate_messages_cpp: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Odom.h
+first_project/CMakeFiles/first_project_generate_messages_cpp: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Reset_odom.h
 
 
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Odom.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
@@ -62,8 +63,16 @@ first_project/CMakeFiles/first_project_generate_messages_cpp: /home/stinky/Docum
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from first_project/Odom.msg"
 	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project && /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg -Ifirst_project:/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p first_project -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project -e /opt/ros/noetic/share/gencpp/cmake/..
 
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Reset_odom.h: /opt/ros/noetic/lib/gencpp/gen_cpp.py
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Reset_odom.h: /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Reset_odom.h: /opt/ros/noetic/share/gencpp/msg.h.template
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Reset_odom.h: /opt/ros/noetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from first_project/Reset_odom.srv"
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project && /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv -Ifirst_project:/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p first_project -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project -e /opt/ros/noetic/share/gencpp/cmake/..
+
 first_project_generate_messages_cpp: first_project/CMakeFiles/first_project_generate_messages_cpp
 first_project_generate_messages_cpp: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Odom.h
+first_project_generate_messages_cpp: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/include/first_project/Reset_odom.h
 first_project_generate_messages_cpp: first_project/CMakeFiles/first_project_generate_messages_cpp.dir/build.make
 
 .PHONY : first_project_generate_messages_cpp

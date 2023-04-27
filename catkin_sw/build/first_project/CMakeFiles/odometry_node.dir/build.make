@@ -57,9 +57,22 @@ include first_project/CMakeFiles/odometry_node.dir/progress.make
 # Include the compile flags for this target's objects.
 include first_project/CMakeFiles/odometry_node.dir/flags.make
 
+first_project/CMakeFiles/odometry_node.dir/src/main.cpp.o: first_project/CMakeFiles/odometry_node.dir/flags.make
+first_project/CMakeFiles/odometry_node.dir/src/main.cpp.o: /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object first_project/CMakeFiles/odometry_node.dir/src/main.cpp.o"
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/odometry_node.dir/src/main.cpp.o -c /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/main.cpp
+
+first_project/CMakeFiles/odometry_node.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/odometry_node.dir/src/main.cpp.i"
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/main.cpp > CMakeFiles/odometry_node.dir/src/main.cpp.i
+
+first_project/CMakeFiles/odometry_node.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/odometry_node.dir/src/main.cpp.s"
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/main.cpp -o CMakeFiles/odometry_node.dir/src/main.cpp.s
+
 first_project/CMakeFiles/odometry_node.dir/src/odometry_node.cpp.o: first_project/CMakeFiles/odometry_node.dir/flags.make
 first_project/CMakeFiles/odometry_node.dir/src/odometry_node.cpp.o: /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/odometry_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object first_project/CMakeFiles/odometry_node.dir/src/odometry_node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object first_project/CMakeFiles/odometry_node.dir/src/odometry_node.cpp.o"
 	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/odometry_node.dir/src/odometry_node.cpp.o -c /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/odometry_node.cpp
 
 first_project/CMakeFiles/odometry_node.dir/src/odometry_node.cpp.i: cmake_force
@@ -72,11 +85,13 @@ first_project/CMakeFiles/odometry_node.dir/src/odometry_node.cpp.s: cmake_force
 
 # Object files for target odometry_node
 odometry_node_OBJECTS = \
+"CMakeFiles/odometry_node.dir/src/main.cpp.o" \
 "CMakeFiles/odometry_node.dir/src/odometry_node.cpp.o"
 
 # External object files for target odometry_node
 odometry_node_EXTERNAL_OBJECTS =
 
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node: first_project/CMakeFiles/odometry_node.dir/src/main.cpp.o
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node: first_project/CMakeFiles/odometry_node.dir/src/odometry_node.cpp.o
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node: first_project/CMakeFiles/odometry_node.dir/build.make
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node: /opt/ros/noetic/lib/librosbag.so
@@ -115,7 +130,7 @@ odometry_node_EXTERNAL_OBJECTS =
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so.0.4
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node: first_project/CMakeFiles/odometry_node.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/first_project/odometry_node"
 	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/odometry_node.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

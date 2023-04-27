@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
 messages_str = "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg"
-services_str = ""
+services_str = "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv"
 pkg_name = "first_project"
 dependencies_str = "geometry_msgs;nav_msgs;std_msgs;rosgraph_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

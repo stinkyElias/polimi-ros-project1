@@ -273,6 +273,21 @@ first_project_gencpp/fast:
 .PHONY : first_project_gencpp/fast
 
 # Convenience name for target.
+first_project/CMakeFiles/_first_project_generate_messages_check_deps_Reset_odom.dir/rule:
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build && $(MAKE) -f CMakeFiles/Makefile2 first_project/CMakeFiles/_first_project_generate_messages_check_deps_Reset_odom.dir/rule
+.PHONY : first_project/CMakeFiles/_first_project_generate_messages_check_deps_Reset_odom.dir/rule
+
+# Convenience name for target.
+_first_project_generate_messages_check_deps_Reset_odom: first_project/CMakeFiles/_first_project_generate_messages_check_deps_Reset_odom.dir/rule
+
+.PHONY : _first_project_generate_messages_check_deps_Reset_odom
+
+# fast build rule for target.
+_first_project_generate_messages_check_deps_Reset_odom/fast:
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build && $(MAKE) -f first_project/CMakeFiles/_first_project_generate_messages_check_deps_Reset_odom.dir/build.make first_project/CMakeFiles/_first_project_generate_messages_check_deps_Reset_odom.dir/build
+.PHONY : _first_project_generate_messages_check_deps_Reset_odom/fast
+
+# Convenience name for target.
 first_project/CMakeFiles/first_project_generate_messages.dir/rule:
 	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build && $(MAKE) -f CMakeFiles/Makefile2 first_project/CMakeFiles/first_project_generate_messages.dir/rule
 .PHONY : first_project/CMakeFiles/first_project_generate_messages.dir/rule
@@ -1262,6 +1277,33 @@ tf2_msgs_generate_messages_nodejs/fast:
 	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build && $(MAKE) -f first_project/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build.make first_project/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir/build
 .PHONY : tf2_msgs_generate_messages_nodejs/fast
 
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build && $(MAKE) -f first_project/CMakeFiles/odometry_node.dir/build.make first_project/CMakeFiles/odometry_node.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build && $(MAKE) -f first_project/CMakeFiles/odometry_node.dir/build.make first_project/CMakeFiles/odometry_node.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build && $(MAKE) -f first_project/CMakeFiles/odometry_node.dir/build.make first_project/CMakeFiles/odometry_node.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 src/odometry_node.o: src/odometry_node.cpp.o
 
 .PHONY : src/odometry_node.o
@@ -1307,6 +1349,7 @@ help:
 	@echo "... first_project_geneus"
 	@echo "... first_project_generate_messages_eus"
 	@echo "... first_project_gencpp"
+	@echo "... _first_project_generate_messages_check_deps_Reset_odom"
 	@echo "... first_project_generate_messages"
 	@echo "... tf2_msgs_generate_messages_py"
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
@@ -1375,6 +1418,9 @@ help:
 	@echo "... actionlib_generate_messages_nodejs"
 	@echo "... tf2_msgs_generate_messages_lisp"
 	@echo "... tf2_msgs_generate_messages_nodejs"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/odometry_node.o"
 	@echo "... src/odometry_node.i"
 	@echo "... src/odometry_node.s"

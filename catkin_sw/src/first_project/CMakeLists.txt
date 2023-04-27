@@ -59,12 +59,11 @@ add_message_files(
   Odom.msg
 )
 
-## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+# Generate services in the 'srv' folder
+add_service_files(
+  FILES
+  Reset_odom.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -122,9 +121,9 @@ include_directories(
   include ${catkin_INCLUDE_DIRS}
 )
 
-## Declare a C++ library
+# # Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/first_project.cpp
+#   src/odometry_node.h
 # )
 
 ## Add cmake target dependencies of the library
@@ -135,7 +134,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(odometry_node src/odometry_node.cpp)
+add_executable(odometry_node src/main.cpp src/odometry_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the

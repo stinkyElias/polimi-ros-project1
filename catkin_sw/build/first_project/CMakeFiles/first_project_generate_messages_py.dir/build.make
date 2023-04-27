@@ -54,7 +54,9 @@ CMAKE_BINARY_DIR = /home/stinky/Documents/polimi-ros-project1/catkin_sw/build
 include first_project/CMakeFiles/first_project_generate_messages_py.dir/progress.make
 
 first_project/CMakeFiles/first_project_generate_messages_py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/_Odom.py
+first_project/CMakeFiles/first_project_generate_messages_py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/_Reset_odom.py
 first_project/CMakeFiles/first_project_generate_messages_py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/__init__.py
+first_project/CMakeFiles/first_project_generate_messages_py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/__init__.py
 
 
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/_Odom.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
@@ -62,14 +64,28 @@ first_project/CMakeFiles/first_project_generate_messages_py: /home/stinky/Docume
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG first_project/Odom"
 	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg -Ifirst_project:/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p first_project -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg
 
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/_Reset_odom.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/_Reset_odom.py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV first_project/Reset_odom"
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv -Ifirst_project:/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg -Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg -p first_project -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv
+
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/__init__.py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/_Odom.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python msg __init__.py for first_project"
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/__init__.py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/_Reset_odom.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for first_project"
 	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg --initpy
+
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/__init__.py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/_Odom.py
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/__init__.py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/_Reset_odom.py
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python srv __init__.py for first_project"
+	cd /home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv --initpy
 
 first_project_generate_messages_py: first_project/CMakeFiles/first_project_generate_messages_py
 first_project_generate_messages_py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/_Odom.py
+first_project_generate_messages_py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/_Reset_odom.py
 first_project_generate_messages_py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/msg/__init__.py
+first_project_generate_messages_py: /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/python3/dist-packages/first_project/srv/__init__.py
 first_project_generate_messages_py: first_project/CMakeFiles/first_project_generate_messages_py.dir/build.make
 
 .PHONY : first_project_generate_messages_py

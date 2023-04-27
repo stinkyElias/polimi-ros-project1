@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "first_project: 1 messages, 0 services")
+message(STATUS "first_project: 1 messages, 1 services")
 
 set(MSG_I_FLAGS "-Ifirst_project:/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg;-Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg;-Inav_msgs:/opt/ros/noetic/share/nav_msgs/cmake/../msg;-Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg;-Irosgraph_msgs:/opt/ros/noetic/share/rosgraph_msgs/cmake/../msg;-Iactionlib_msgs:/opt/ros/noetic/share/actionlib_msgs/cmake/../msg")
 
@@ -22,6 +22,11 @@ add_custom_target(_first_project_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "first_project" "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg" ""
 )
 
+get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv" NAME_WE)
+add_custom_target(_first_project_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "first_project" "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv" ""
+)
+
 #
 #  langs = gencpp;geneus;genlisp;gennodejs;genpy
 #
@@ -36,6 +41,12 @@ _generate_msg_cpp(first_project
 )
 
 ### Generating Services
+_generate_srv_cpp(first_project
+  "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/first_project
+)
 
 ### Generating Module File
 _generate_module_cpp(first_project
@@ -50,6 +61,8 @@ add_dependencies(first_project_generate_messages first_project_generate_messages
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg" NAME_WE)
+add_dependencies(first_project_generate_messages_cpp _first_project_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv" NAME_WE)
 add_dependencies(first_project_generate_messages_cpp _first_project_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -69,6 +82,12 @@ _generate_msg_eus(first_project
 )
 
 ### Generating Services
+_generate_srv_eus(first_project
+  "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/first_project
+)
 
 ### Generating Module File
 _generate_module_eus(first_project
@@ -83,6 +102,8 @@ add_dependencies(first_project_generate_messages first_project_generate_messages
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg" NAME_WE)
+add_dependencies(first_project_generate_messages_eus _first_project_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv" NAME_WE)
 add_dependencies(first_project_generate_messages_eus _first_project_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -102,6 +123,12 @@ _generate_msg_lisp(first_project
 )
 
 ### Generating Services
+_generate_srv_lisp(first_project
+  "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/first_project
+)
 
 ### Generating Module File
 _generate_module_lisp(first_project
@@ -116,6 +143,8 @@ add_dependencies(first_project_generate_messages first_project_generate_messages
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg" NAME_WE)
+add_dependencies(first_project_generate_messages_lisp _first_project_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv" NAME_WE)
 add_dependencies(first_project_generate_messages_lisp _first_project_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -135,6 +164,12 @@ _generate_msg_nodejs(first_project
 )
 
 ### Generating Services
+_generate_srv_nodejs(first_project
+  "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/first_project
+)
 
 ### Generating Module File
 _generate_module_nodejs(first_project
@@ -149,6 +184,8 @@ add_dependencies(first_project_generate_messages first_project_generate_messages
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg" NAME_WE)
+add_dependencies(first_project_generate_messages_nodejs _first_project_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv" NAME_WE)
 add_dependencies(first_project_generate_messages_nodejs _first_project_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -168,6 +205,12 @@ _generate_msg_py(first_project
 )
 
 ### Generating Services
+_generate_srv_py(first_project
+  "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/first_project
+)
 
 ### Generating Module File
 _generate_module_py(first_project
@@ -182,6 +225,8 @@ add_dependencies(first_project_generate_messages first_project_generate_messages
 
 # add dependencies to all check dependencies targets
 get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/msg/Odom.msg" NAME_WE)
+add_dependencies(first_project_generate_messages_py _first_project_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/srv/Reset_odom.srv" NAME_WE)
 add_dependencies(first_project_generate_messages_py _first_project_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

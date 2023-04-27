@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/main.cpp" "/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project/CMakeFiles/odometry_node.dir/src/main.cpp.o"
   "/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/odometry_node.cpp" "/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project/CMakeFiles/odometry_node.dir/src/odometry_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
