@@ -3,6 +3,6 @@ prefix=/home/stinky/Documents/polimi-ros-project1/catkin_sw/install
 Name: first_project
 Description: Description of first_project
 Version: 0.0.0
-Cflags: 
+Cflags: -I${prefix}/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: geometry_msgs nav_msgs roscpp rospy std_msgs rosbag tf message_runtime rosgraph_msgs
