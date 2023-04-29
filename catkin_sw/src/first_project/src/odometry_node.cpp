@@ -1,16 +1,21 @@
 #include "first_project/odometry_node.h"
 
 OdometryNode::OdometryNode(ros::NodeHandle *nodeHandle):
-	last_theta{0}, last_alpha{0}, last_s{0}, d{2.8}, queue{1000}{
+	d{2.8}, queue{1000}, x{0}, y{0}, t_last{0}, theta{0} {
 
 	odom_pub = nodeHandle->advertise<nav_msgs::Odometry>("/odometry", queue);
 	custom_pub = nodeHandle->advertise<first_project::Odom>("/custom_odometry", queue);
-	// srv_pub = nodeHandle->advertise<nav_msgs::Odometry>("/odometry", queue);
 
 	odom_sub = nodeHandle->subscribe("/speed_steer", queue, &OdometryNode::callback_odometry, this);
 	clock_sub = nodeHandle->subscribe("/clock", queue, &OdometryNode::callback_clock, this);
 
 	service = nodeHandle->advertiseService("/reset_odom", &OdometryNode::reset_odom, this);
+
+	// For launch file
+	// nodeHandle->getParam("starting_x", starting_x);
+	// nodeHandle->getParam("starting_y", starting_y);
+	// nodeHandle->getParam("starting_th", starting_th);
+	// nodeHandle->getParam("use_sim_time", use_sim_time);
 	
 	// Set position to 0 when we start.
 	odom.pose.pose.position.x = 0.0;
@@ -26,45 +31,56 @@ OdometryNode::OdometryNode(ros::NodeHandle *nodeHandle):
 
 void OdometryNode::callback_odometry(const geometry_msgs::Quaternion::ConstPtr &msg){
 	// Odometry message
-	odom.header.stamp = ros::Time::now();
+	odom.header.stamp = time;
 	odom.header.frame_id = "odom";
 
-	s = msg->x;		// Assumed that x is vehicle speed
-	alpha = msg->y;
+	speed = msg->x;
+	steering_angle = msg->y;
 
-	// Pose without covariance
-	theta = last_theta + s/d * (log(abs(cos(last_alpha))) - log(abs(cos(alpha))));
-	odom.pose.pose.position.x += last_s*(sin(theta) - sin(last_theta));
-	odom.pose.pose.position.y += last_s*(cos(theta) - cos(last_theta));
+	turning_radius = d/tan(steering_angle);
 
-	tf::Quaternion quat = tf::createQuaternionFromYaw(last_theta);
-	tf::quaternionTFToMsg(quat, odom.pose.pose.orientation);		
+	omega = speed/turning_radius;
 
-	// Twist without covariance
-	odom.twist.twist.linear.x = last_s*cos(last_theta);
-	odom.twist.twist.linear.y = last_s*sin(last_theta);
+	delta_t = odom.header.stamp.toSec() - t_last;
 
-	odom.twist.twist.angular.z = s/d * tan(last_alpha);
+	delta_theta = omega*delta_t;
+	theta_new = theta+delta_theta;
+
+	delta_x = speed*cos(theta)*delta_t;
+	delta_y = speed*sin(theta)*delta_t;
 	
-	// Update speed, steering angle and vehicle angle
-	last_s = s;
-	last_alpha = alpha;
-	last_theta = theta;
+	x_new = x+delta_x;
+	y_new = y+delta_y;
+
+	odom.pose.pose.position.x = x_new;
+	odom.pose.pose.position.y = y_new;
+
+	tf::Quaternion quat = tf::createQuaternionFromYaw(theta_new);
+	tf::quaternionTFToMsg(quat, odom.pose.pose.orientation);
+
+	odom.twist.twist.linear.x = speed*cos(theta);
+	odom.twist.twist.linear.y = speed*sin(theta);
+
+	t_last = odom.header.stamp.toSec();
+	x = x_new;
+	y = y_new;
+	theta = theta_new;
+
 
 	// Update custom message variables
-	custom_x = odom.pose.pose.position.x;
-	custom_y = odom.pose.pose.position.y;
-	custom_th = theta;
+	custom_x = x_new;
+	custom_y = y_new;
+	custom_th = theta_new;
 
 	// Publish odom to topic /odometry
 	odom_pub.publish(odom);
-	// ROS_INFO("x: %f", custom_x);
+	// ROS_INFO(": %f", x);
 }	
 
 void OdometryNode::callback_clock(const rosgraph_msgs::Clock::ConstPtr &msg){
-	ros::Time time = msg->clock;
-	double timestamp = time.toSec();
-	custom_timestamp = std::to_string(timestamp);
+	time = msg->clock;
+	double bag_timestamp = time.toSec();
+	custom_timestamp = std::to_string(bag_timestamp);
 
 	custom_odom.x = custom_x;
 	custom_odom.y = custom_y;
@@ -73,6 +89,13 @@ void OdometryNode::callback_clock(const rosgraph_msgs::Clock::ConstPtr &msg){
 
 	custom_pub.publish(custom_odom);
 	// ROS_INFO("Clock: %d", custom_odom.x);
+
+	odom_to_base_tr.setOrigin(tf::Vector3(custom_x, custom_y, 0.0));
+	odom_to_base_q.setRPY(0.0, 0.0, custom_th);
+	
+	odom_to_base_tr.setRotation(odom_to_base_q);
+
+	tf_broadcaster.sendTransform(tf::StampedTransform(odom_to_base_tr, msg->clock, "odom", "base_link"));
 }
 
 bool OdometryNode::reset_odom(first_project::Reset_odom::Request &req, first_project::Reset_odom::Response &res){
@@ -101,3 +124,4 @@ bool OdometryNode::reset_odom(first_project::Reset_odom::Request &req, first_pro
 
 	return true;
 }
+
