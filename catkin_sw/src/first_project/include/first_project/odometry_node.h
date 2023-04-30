@@ -51,10 +51,10 @@ class OdometryNode{
 
         int queue;
 
-        double d, x, y, t_last, speed, steering_angle, turning_radius,
-                omega, delta_t, theta;
-        double theta_new, x_new, y_new;
-        double delta_x, delta_y, delta_theta;
+        double d, x, y, t, speed, steering_angle, turning_radius,
+                omega, theta;
+        double theta_next, x_next, y_next;
+        double delta_x, delta_y, delta_theta, delta_t;
         double custom_x, custom_y, custom_th;                   // Variables for
         
         ros::Time time;

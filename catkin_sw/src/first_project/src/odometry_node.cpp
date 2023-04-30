@@ -1,7 +1,7 @@
 #include "first_project/odometry_node.h"
 
 OdometryNode::OdometryNode(ros::NodeHandle *nodeHandle):
-	d{2.8}, queue{1000}, x{0}, y{0}, t_last{0}, theta{0} {
+	d{2.8}, queue{1000}, x{0}, y{0}, t{0}, theta{0} {
 
 	odom_pub = nodeHandle->advertise<nav_msgs::Odometry>("/odometry", queue);
 	custom_pub = nodeHandle->advertise<first_project::Odom>("/custom_odometry", queue);
@@ -37,44 +37,55 @@ void OdometryNode::callback_odometry(const geometry_msgs::Quaternion::ConstPtr &
 	speed = msg->x;
 	steering_angle = msg->y;
 
-	turning_radius = d/tan(steering_angle);
+	// Ackermann calculations
 
-	omega = speed/turning_radius;
+	delta_t = odom.header.stamp.toSec() - t;
 
-	delta_t = odom.header.stamp.toSec() - t_last;
+	// Filter out small steering_angles to avoid division by zero.
+	if(steering_angle < 0.001 && steering_angle > -0.001){
+		turning_radius = 0;
+		omega = 0;
 
-	delta_theta = omega*delta_t;
-	theta_new = theta+delta_theta;
+		theta_next = theta;
+		x_next = speed*cos(theta_next);
+		y_next = speed*sin(theta_next);
 
-	delta_x = speed*cos(theta)*delta_t;
-	delta_y = speed*sin(theta)*delta_t;
-	
-	x_new = x+delta_x;
-	y_new = y+delta_y;
+	}else{
+		turning_radius = d/tan(steering_angle);
+		omega = speed/turning_radius;
 
-	odom.pose.pose.position.x = x_new;
-	odom.pose.pose.position.y = y_new;
+		// Discrete integrations
+		theta_next = theta + omega*delta_t;
+		x_next = x + (speed/omega) * (sin(theta_next) - sin(theta));
+		y_next = y - (speed/omega) * (cos(theta_next) - cos(theta));
+	}
 
-	tf::Quaternion quat = tf::createQuaternionFromYaw(theta_new);
+	// Set 2D odometry
+	// Pose
+	odom.pose.pose.position.x = x_next;
+	odom.pose.pose.position.y = y_next;
+	tf::Quaternion quat = tf::createQuaternionFromYaw(theta_next);
 	tf::quaternionTFToMsg(quat, odom.pose.pose.orientation);
 
-	odom.twist.twist.linear.x = speed*cos(theta);
-	odom.twist.twist.linear.y = speed*sin(theta);
+	// Twist
+	odom.twist.twist.linear.x = speed*cos(theta_next);
+	odom.twist.twist.linear.y = speed*sin(theta_next);
+	odom.twist.twist.angular.z = omega;
 
-	t_last = odom.header.stamp.toSec();
-	x = x_new;
-	y = y_new;
-	theta = theta_new;
-
+	// Update "current" variables for next iteration
+	x = x_next;
+	y = y_next;
+	theta = theta_next;
+	t = odom.header.stamp.toSec();
 
 	// Update custom message variables
-	custom_x = x_new;
-	custom_y = y_new;
-	custom_th = theta_new;
+	custom_x = x;
+	custom_y = y;
+	custom_th = theta;
 
 	// Publish odom to topic /odometry
 	odom_pub.publish(odom);
-	// ROS_INFO(": %f", x);
+	// ROS_INFO("custom_theta: %f", custom_th);
 }	
 
 void OdometryNode::callback_clock(const rosgraph_msgs::Clock::ConstPtr &msg){
@@ -95,7 +106,7 @@ void OdometryNode::callback_clock(const rosgraph_msgs::Clock::ConstPtr &msg){
 	
 	odom_to_base_tr.setRotation(odom_to_base_q);
 
-	tf_broadcaster.sendTransform(tf::StampedTransform(odom_to_base_tr, msg->clock, "odom", "base_link"));
+	tf_broadcaster.sendTransform(tf::StampedTransform(odom_to_base_tr, time, "odom", "base_link"));
 }
 
 bool OdometryNode::reset_odom(first_project::Reset_odom::Request &req, first_project::Reset_odom::Response &res){
