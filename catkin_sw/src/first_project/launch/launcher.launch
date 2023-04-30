@@ -1,9 +1,9 @@
 <launch>
     <node pkg= "first_project" type= "odometry_node.cpp" name= "odometry_node" output= "screen">
-        <param name= "/use_sim_time" value= "true"/>
-        <param name= "starting_x" value= "0.0"/>
-        <param name= "starting_y" value= "0.0"/>
-        <param name= "starting_th" value= "0.0"/>
-    </node>
+        <param name= "starting_x" type= "double" value= "0.0"/>
+        <param name= "starting_y" type= "double" value= "0.0"/>
+        <param name= "starting_th" type= "double" value= "0.0"/>
 
+        <param name= "/use_sim_time" value= "true"/>
+    </node>
 </launch>

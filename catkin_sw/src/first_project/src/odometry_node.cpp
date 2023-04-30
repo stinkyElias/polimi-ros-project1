@@ -1,7 +1,7 @@
 #include "first_project/odometry_node.h"
 
 OdometryNode::OdometryNode(ros::NodeHandle *nodeHandle):
-	d{2.8}, queue{1000}, x{0}, y{0}, t{0}, theta{0} {
+	d{2.8}, queue{10}, x{0}, y{0}, t{0}, theta{0} {
 
 	odom_pub = nodeHandle->advertise<nav_msgs::Odometry>("/odometry", queue);
 	custom_pub = nodeHandle->advertise<first_project::Odom>("/custom_odometry", queue);
@@ -11,11 +11,16 @@ OdometryNode::OdometryNode(ros::NodeHandle *nodeHandle):
 
 	service = nodeHandle->advertiseService("/reset_odom", &OdometryNode::reset_odom, this);
 
-	// For launch file
-	// nodeHandle->getParam("starting_x", starting_x);
-	// nodeHandle->getParam("starting_y", starting_y);
-	// nodeHandle->getParam("starting_th", starting_th);
-	// nodeHandle->getParam("use_sim_time", use_sim_time);
+	fl_sub = nodeHandle->subscribe("/sick_front_left/scan", queue, &OdometryNode::callback_front_left_tr, this);
+	fr_sub = nodeHandle->subscribe("/sick_front_right/scan", queue, &OdometryNode::callback_front_right_tr, this);
+	rl_sub = nodeHandle->subscribe("/sick_rear_left/scan", queue, &OdometryNode::callback_rear_left_tr, this);
+	rr_sub = nodeHandle->subscribe("/sick_rear_right/scan", queue, &OdometryNode::callback_rear_right_tr, this);
+
+	// From launch file
+	nodeHandle->getParam("starting_x", starting_x);
+	nodeHandle->getParam("starting_y", starting_y);
+	nodeHandle->getParam("starting_th", starting_th);
+	nodeHandle->getParam("use_sim_time", use_sim_time);
 	
 	// Set position to 0 when we start.
 	odom.pose.pose.position.x = 0.0;
@@ -26,7 +31,16 @@ OdometryNode::OdometryNode(ros::NodeHandle *nodeHandle):
 	odom.pose.pose.orientation.x = 0.0;
 	odom.pose.pose.orientation.y = 0.0;
 	odom.pose.pose.orientation.z = 0.0;
-	odom.pose.pose.orientation.w = 0.0;
+	odom.pose.pose.orientation.w = 1.0;
+
+	custom_x = starting_x;
+	custom_y = starting_y;
+	custom_th = starting_th;
+
+	q_fr.setRPY(-0.76, 0.0, M_PI);
+	q_fl.setRPY(0.81, 0.0, M_PI);
+	q_rr.setRPY(-2.3, 0.0, M_PI);
+	q_rl.setRPY(2.38, 0.0, M_PI);
 }
 
 void OdometryNode::callback_odometry(const geometry_msgs::Quaternion::ConstPtr &msg){
@@ -136,3 +150,31 @@ bool OdometryNode::reset_odom(first_project::Reset_odom::Request &req, first_pro
 	return true;
 }
 
+void OdometryNode::callback_front_left_tr(const sensor_msgs::LaserScan::ConstPtr &msg){
+	front_left_tr.setOrigin(tf::Vector3(1.85, 0.93, 0.0));
+	front_left_tr.setRotation(q_fl);
+
+	tf_broadcaster.sendTransform(tf::StampedTransform(front_left_tr, time, "base_link", "sick_front_left"));
+}
+
+void OdometryNode::callback_front_right_tr(const sensor_msgs::LaserScan::ConstPtr &msg){
+	front_right_tr.setOrigin(tf::Vector3(1.85, -0.93, 0.0));
+
+	front_right_tr.setRotation(q_fr);
+
+	tf_broadcaster.sendTransform(tf::StampedTransform(front_right_tr, time, "base_link", "sick_front_right"));
+}
+
+void OdometryNode::callback_rear_right_tr(const sensor_msgs::LaserScan::ConstPtr &msg){
+	rear_right_tr.setOrigin(tf::Vector3(-1.75, -0.8, 0.0));
+	rear_right_tr.setRotation(q_rr);
+
+	tf_broadcaster.sendTransform(tf::StampedTransform(rear_right_tr, time, "base_link", "sick_rear_right"));
+}
+
+void OdometryNode::callback_rear_left_tr(const sensor_msgs::LaserScan::ConstPtr &msg){
+	rear_left_tr.setOrigin(tf::Vector3(-1.85, 0.93, 0.0));
+	rear_left_tr.setRotation(q_rl);
+
+	tf_broadcaster.sendTransform(tf::StampedTransform(rear_left_tr, time, "base_link", "sick_rear_left"));
+}

@@ -93,14 +93,14 @@ first_project/Reset_odom.h
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/include/first_project/first_project/Reset_odom.h
 sensor_msgs/LaserScan.h
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/include/first_project/sensor_msgs/LaserScan.h
-vector
--
 string
 -
 cmath
 -
-functional
--
+
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/main.cpp
+first_project/odometry_node.h
+/home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/first_project/odometry_node.h
 
 /home/stinky/Documents/polimi-ros-project1/catkin_sw/src/first_project/src/odometry_node.cpp
 first_project/odometry_node.h

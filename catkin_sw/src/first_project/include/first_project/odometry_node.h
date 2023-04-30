@@ -16,10 +16,8 @@
 #include "first_project/Reset_odom.h"
 #include "sensor_msgs/LaserScan.h"
 
-#include <vector>
 #include <string>
 #include <cmath>
-#include <functional>
 
 class OdometryNode{
     public:
@@ -29,6 +27,11 @@ class OdometryNode{
         void callback_clock(const rosgraph_msgs::Clock::ConstPtr &msg);
         bool reset_odom(first_project::Reset_odom::Request &req, first_project::Reset_odom::Response &res);
 
+        void callback_front_left_tr(const sensor_msgs::LaserScan::ConstPtr &msg);
+        void callback_front_right_tr(const sensor_msgs::LaserScan::ConstPtr &msg);
+        void callback_rear_left_tr(const sensor_msgs::LaserScan::ConstPtr &msg);
+        void callback_rear_right_tr(const sensor_msgs::LaserScan::ConstPtr &msg);
+
     private:
         ros::Publisher odom_pub;
         ros::Publisher custom_pub;
@@ -37,6 +40,7 @@ class OdometryNode{
 
         ros::Subscriber odom_sub;
         ros::Subscriber clock_sub;
+        ros::Subscriber fl_sub, fr_sub, rl_sub, rr_sub;
 
         ros::ServiceServer service;
 
@@ -46,10 +50,15 @@ class OdometryNode{
         first_project::Odom custom_odom;
 
     	tf::TransformBroadcaster tf_broadcaster;
-        tf::Transform odom_to_base_tr;
-        tf::Quaternion odom_to_base_q;
 
-        int queue;
+        tf::Transform odom_to_base_tr;
+        tf::Transform front_left_tr, front_right_tr, rear_left_tr, rear_right_tr;
+
+        tf::Quaternion odom_to_base_q;
+        tf::Quaternion no_rotation;
+        tf::Quaternion q_fr, q_fl, q_rr, q_rl;
+
+        uint32_t queue;
 
         double d, x, y, t, speed, steering_angle, turning_radius,
                 omega, theta;
@@ -60,8 +69,6 @@ class OdometryNode{
         ros::Time time;
         std::string custom_timestamp;
 
-        double starting_x;
-        double starting_y;
-        double starting_th;
+        double starting_x, starting_y, starting_th;
         bool use_sim_time;
 };
