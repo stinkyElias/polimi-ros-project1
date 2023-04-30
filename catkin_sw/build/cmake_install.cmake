@@ -131,6 +131,7 @@ endif()
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
   include("/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/gtest/cmake_install.cmake")
+  include("/home/stinky/Documents/polimi-ros-project1/catkin_sw/build/first_project/cmake_install.cmake")
 
 endif()
 

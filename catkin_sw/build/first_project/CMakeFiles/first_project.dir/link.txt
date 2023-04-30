@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libfirst_project.so -o /home/stinky/Documents/polimi-ros-project1/catkin_sw/devel/lib/libfirst_project.so CMakeFiles/first_project.dir/src/odometry_node.cpp.o 
