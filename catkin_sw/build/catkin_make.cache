@@ -1,2 +1,0 @@
-
--DCATKIN_DEVEL_PREFIX=/home/stinky/Documents/polimi-ros-project1/catkin_sw/devel -DCMAKE_INSTALL_PREFIX=/home/stinky/Documents/polimi-ros-project1/catkin_sw/install -G Unix Makefiles
